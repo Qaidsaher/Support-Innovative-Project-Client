@@ -1,8 +1,44 @@
-# React + Vite
+To get the repository and install it, follow these steps:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 1. Clone the Repository
 
-Currently, two official plugins are available:
+First, you need to clone the repository to your local machine. Run the following command in your terminal:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+git clone https://github.com/Qaidsaher/Support-Innovative-Project-Client.git
+```
+
+Replace `https://github.com/Qaidsaher/Support-Innovative-Project-Client.git` with the actual repository URL. This command will create a local copy of the repository on your machine.
+
+### 2. Navigate to the Project Directory
+
+Once the repository is cloned, navigate to the project directory:
+
+```bash
+cd Support-Innovative-Project-Client
+```
+
+
+### 3. Install Dependencies
+
+After navigating to the project folder, install the necessary dependencies by running:
+
+```bash
+npm install
+```
+
+This will install all the dependencies specified in the `package.json` file, including Vite and React, along with any other required packages.
+
+### 4. Verify Installation
+
+Once the installation is complete, you can start the development server by running:
+
+```bash
+npm run dev
+```
+
+This will launch the application in development mode. Open `http://localhost:5173` in your browser to verify that everything is working correctly.
+
+---
+
+Now you have successfully cloned the repository and installed the required dependencies.
