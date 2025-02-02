@@ -41,4 +41,3 @@ This will launch the application in development mode. Open `http://localhost:517
 
 ---
 
-Now you have successfully cloned the repository and installed the required dependencies.
