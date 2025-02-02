@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+
+/* Your custom CSS can follow */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #B5B5B5;
+  font-family: 'Inter';
+  font-style: normal;
+}
+
+
+.bg-linear-gradient {
+  background: linear-gradient(180deg, rgba(166, 166, 166, 0.29) 0%, rgba(115, 115, 115, 0.29) 44.5%, rgba(86, 96, 107, 0.29) 67.5%, rgba(57, 76, 98, 0.29) 100%);
+  ;
+}
+.input-linear-gradient{
+  background: linear-gradient(180deg, rgba(166, 166, 166, 0.29) 0%, rgba(115, 115, 115, 0.29) 44.5%, rgba(86, 96, 107, 0.29) 67.5%, rgba(57, 76, 98, 0.29) 100%);
+
+}
