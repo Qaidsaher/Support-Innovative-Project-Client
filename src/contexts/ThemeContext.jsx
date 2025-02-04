@@ -1,21 +1,25 @@
-// src/contexts/ThemeContext.jsx
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from "react";
 
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "media");
 
+  // Toggle theme between "light" and "dark"
+  const toggleTheme = () => {
+    const newTheme = theme === "media" ? "dark" : "media";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
+
+  // Apply theme to `html` tag (for Tailwind dark mode)
   useEffect(() => {
-    localStorage.setItem('theme', theme);
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
+    if (theme === "dark") {
+      document.documentElement.classList.add("media"); // ✅ Enables dark mode
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [theme]);
-
-  const toggleTheme = () => setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

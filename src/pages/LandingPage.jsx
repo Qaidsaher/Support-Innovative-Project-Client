@@ -10,20 +10,14 @@ import Contact from "../components/Contact";
 import { About } from "../components/About";
 import Investors from "../components/Investors";
 const LandingPage = () => (
-  <div className="min-h-screen ">
-    {/* <Navbar /> */}
-    <main>
-      <main className="flex-grow pt-16">
-        <Hero />
-        <About/>
-        <TargetedAudience />
-        <Investors />
-        <Areas />
-        <Stats />
-        <Contact />
-      </main>
-    </main>
-    <Footer />
+  <div className="min-h-screen">
+    <Hero />
+    <About />
+    <TargetedAudience />
+    <Investors />
+    <Areas />
+    <Stats />
+    <Contact />
   </div>
 );
 

@@ -48,6 +48,13 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
+          <Link
+            // to={t("join-by")}
+            to="/join-by"
+            className="block rounded-sm text-gray-700 dark:text-gray-300 transition transform hover:text-indigo-600 hover:bg-indigo-400 p-2 text-md "
+          >
+            join by
+          </Link>
           {/* Language Toggle */}
           <button
             onClick={toggleLanguage}
@@ -109,6 +116,7 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
+
             <button
               onClick={toggleLanguage}
               className="block text-gray-700 dark:text-gray-300 transition transform hover:text-indigo-600 hover:scale-105"

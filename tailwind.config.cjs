@@ -1,13 +1,9 @@
-// tailwind.config.cjs
-module.exports = {
-    darkMode: 'class', // Enable dark mode via a class on the root element
-    content: [
-      './src/**/*.{js,jsx,ts,tsx}',
-      './public/index.html'
-    ],
-    theme: {
-      extend: {},
-    },
-    plugins: [],
-  };
-  
+/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: "class", // ✅ Enable dark mode with `class`
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"], // ✅ Ensure it scans all files in `src`
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};

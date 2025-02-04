@@ -1,34 +1,54 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "./contexts/ThemeContext";
-import { LanguageProvider } from "./contexts/LanguageContext";
-import Navbar from "./components/Navbar/Navbar";
-import LandingPage from "./pages/LandingPage";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import FloatingButton from "./components/FloatingButton";
-// import additional pages as needed
 
-const App = () => {
-  
+// export default App;
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// import PrivateRoute from "@/routes/PrivateRoute";
+// import LoginPage from "@/pages/auth/LoginPage";
+// import RegisterPage from "@/pages/auth/RegisterPage";
+import DashboardAdmin from "@/pages/admins/Dashboard";
+import { AuthProvider } from "./contexts/AuthContext";
+
+import PrivateRoute from "./routes/PrivateRoute";
+// import AdminDashboard from "@/pages/admin/";
+// import InnovatorDashboard from "@/pages/innovator/InnovatorDashboard";
+// import InvestorDashboard from "@/pages/investor/InvestorDashboard";
+import UnauthorizedPage from "@/pages/UnauthorizedPage";
+import AuthRoutes from "./routes/AuthRoutes";
+import AdminRoutes from "./routes/AdminRoutes";
+import InnovatorRoutes from "./routes/InnovatorRoutes";
+import InvestorRoutes from "./routes/InvestorRoutes";
+import { ThemeProvider } from "./contexts/ThemeContext";
+
+function App() {
   return (
-    <ThemeProvider>
-      <LanguageProvider>
-        <BrowserRouter>
-          <Navbar />
-          <FloatingButton />
-          <main>
-            <Routes>
-              <Route path="/" element={<LandingPage />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              {/* Add more routes here */}
-            </Routes>
-          </main>
-        </BrowserRouter>
-      </LanguageProvider>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider>
+        <AuthProvider>
+          <Routes>
+            {/* <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/unauthorized" element={<UnauthorizedPage />} />
+
+      
+          <Route element={<PrivateRoute allowedRoles={["admin"]} />}>
+            <Route path="/dashboard" element={<DashboardAdmin />} />
+          </Route> */}
+
+            {/* Authentication Routes */}
+            <Route path="/*" element={<AuthRoutes />} />
+
+            {/* User-Specific Routes */}
+            <Route path="/*" element={<AdminRoutes />} />
+            <Route path="/*" element={<InnovatorRoutes />} />
+            <Route path="/*" element={<InvestorRoutes />} />
+           
+            {/* <Route path="/" element={<LoginPage />} /> */}
+          </Routes>
+        </AuthProvider>
+      </ThemeProvider>
+    </Router>
   );
-};
+}
 
 export default App;
